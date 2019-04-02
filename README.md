@@ -19,4 +19,13 @@ http://twitter4j.org/en/configuration.html
 4) create database pcmDB;
 5) create database batchdb;
 
+<b>Create users:-</b><br>
+create user 'pcm'@'localhost' IDENTIFIED BY 'pcm_pw';
+GRANT ALL PRIVILEGES ON *.* TO 'pcm'@'localhost' WITH GRANT OPTION;
+CREATE USER 'batch'@'localhost' IDENTIFIED BY 'batch';
+GRANT ALL PRIVILEGES ON *.* TO 'batch'@'localhost' WITH GRANT OPTION;
+SELECT user FROM mysql.user GROUP BY user;
+FLUSH PRIVILEGES;
+<br><br>
+
 Run the application using java -jar batch-0.1.0.jar -jobName -filepath 
