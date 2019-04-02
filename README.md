@@ -18,3 +18,5 @@ http://twitter4j.org/en/configuration.html
 3) mysql -u root -p <Enter the password on prompt>
 4) create database pcmDB;
 5) create database batchdb;
+
+Run the application using java -jar batch-0.1.0.jar -jobName -filepath 
