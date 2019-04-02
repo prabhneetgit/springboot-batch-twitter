@@ -20,11 +20,11 @@ http://twitter4j.org/en/configuration.html
 5) create database batchdb;
 
 <b>Create users:-</b><br>
-create user 'pcm'@'localhost' IDENTIFIED BY 'pcm_pw';
-GRANT ALL PRIVILEGES ON *.* TO 'pcm'@'localhost' WITH GRANT OPTION;
-CREATE USER 'batch'@'localhost' IDENTIFIED BY 'batch';
-GRANT ALL PRIVILEGES ON *.* TO 'batch'@'localhost' WITH GRANT OPTION;
-SELECT user FROM mysql.user GROUP BY user;
+create user 'pcm'@'localhost' IDENTIFIED BY 'pcm_pw';<br>
+GRANT ALL PRIVILEGES ON \*.* TO 'pcm'@'localhost' WITH GRANT OPTION;<br>
+CREATE USER 'batch'@'localhost' IDENTIFIED BY 'batch';<br>
+GRANT ALL PRIVILEGES ON \*.* TO 'batch'@'localhost' WITH GRANT OPTION;<br>
+SELECT user FROM mysql.user GROUP BY user;<br>
 FLUSH PRIVILEGES;
 <br><br>
 
