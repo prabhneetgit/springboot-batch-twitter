@@ -119,7 +119,7 @@ public class SuggestedPodcastItemProcessor implements ItemProcessor<SuggestedPod
 	 * @throws DateParseException 
 	 * @throws Exception 
 	 */
-	private void setHeaderFieldAttributes(Podcast podcast) throws ClientProtocolException, IOException, DateParseException{
+	private void setHeaderFieldAttributes(Podcast podcast) throws ClientProtocolException, IOException, DateParseException {
    	    
 		HttpHead headMethod = null;
 					

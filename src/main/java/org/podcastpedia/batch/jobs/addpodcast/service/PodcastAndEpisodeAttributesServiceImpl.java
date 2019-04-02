@@ -255,7 +255,6 @@ public class PodcastAndEpisodeAttributesServiceImpl implements PodcastAndEpisode
 	 * 
 	 * @param episode
 	 * @param podcast
-	 * @param episodePublicationDate
 	 */
 	private void updatePodcastPublicationDateAndLastMediaUrl(Episode episode,
 			Podcast podcast) {

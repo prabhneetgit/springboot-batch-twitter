@@ -6,6 +6,7 @@ import java.util.List;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 
+import org.apache.log4j.Logger;
 import org.podcastpedia.batch.common.entities.Podcast;
 import org.podcastpedia.batch.jobs.addpodcast.model.SuggestedPodcast;
 import org.podcastpedia.batch.jobs.addpodcast.service.EmailNotificationService;
@@ -14,6 +15,8 @@ import org.springframework.batch.item.ItemWriter;
 import org.springframework.beans.factory.annotation.Autowired;
 
 public class Writer implements ItemWriter<SuggestedPodcast>{
+
+	private static Logger LOG = Logger.getLogger(Writer.class);
 
 	@Autowired
 	private EntityManager entityManager;
@@ -44,6 +47,7 @@ public class Writer implements ItemWriter<SuggestedPodcast>{
 					suggestedPodcast.getName(), suggestedPodcast.getEmail(),
 					url);
 			if(podcast.getTwitterPage() != null){
+				LOG.info("The podcast twitter page is : "+ podcast.getTwitterPage());
 				socialMediaService.postOnTwitterAboutNewPodcast(podcast,
 				url);				
 			}					

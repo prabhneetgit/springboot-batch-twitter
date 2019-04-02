@@ -7,13 +7,18 @@ import java.util.Map;
 import javax.inject.Inject;
 import javax.mail.internet.MimeMessage;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.apache.velocity.app.VelocityEngine;
+import org.podcastpedia.batch.common.listeners.LogProcessListener;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.mail.javamail.MimeMessagePreparator;
 import org.springframework.ui.velocity.VelocityEngineUtils;
 
 public class EmailNotificationServiceImpl implements EmailNotificationService {
+
+	private static final Log log = LogFactory.getLog(EmailNotificationServiceImpl.class);
 	
 	@Inject
     private JavaMailSender mailSender;
@@ -29,9 +34,9 @@ public class EmailNotificationServiceImpl implements EmailNotificationService {
 			@Override
 			public void prepare(MimeMessage mimeMessage) throws Exception {
 			     MimeMessageHelper message = new MimeMessageHelper(mimeMessage, true, "UTF-8");
-			     message.setTo("adrianmatei@gmail.com");
-	             message.setBcc("adrian.matei@yahoo.com");			     
-			     message.setFrom("contact@podcastpedia.org");
+			     message.setTo("xxx@gmail.com");
+	             message.setBcc("xxx@gmail.com");
+			     message.setFrom("xxx@gmail.com");
 			     message.setSubject("Your podcast has been added to Podcastpedia.org");
 			     message.setSentDate(new Date());
 			     
@@ -50,6 +55,7 @@ public class EmailNotificationServiceImpl implements EmailNotificationService {
 				
 			}
 		};
+		       log.info("Sending email with podcaseUrl: "+podcastUrl);
 		       this.mailSender.send(preparator);			
 	}
 

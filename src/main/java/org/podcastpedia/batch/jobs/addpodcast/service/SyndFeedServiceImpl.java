@@ -7,8 +7,8 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.util.zip.GZIPInputStream;
 
+import com.sun.org.apache.xerces.internal.impl.io.MalformedByteSequenceException;
 import org.apache.log4j.Logger;
-import org.apache.xerces.impl.io.MalformedByteSequenceException;
 import org.xml.sax.InputSource;
 
 import com.sun.syndication.feed.synd.SyndFeed;

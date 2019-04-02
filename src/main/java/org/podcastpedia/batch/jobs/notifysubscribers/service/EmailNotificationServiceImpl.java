@@ -32,9 +32,9 @@ public class EmailNotificationServiceImpl implements EmailNotificationService {
 			public void prepare(MimeMessage mimeMessage) throws Exception {
 								
 			     MimeMessageHelper message = new MimeMessageHelper(mimeMessage, true, "UTF-8");
-			     message.setTo("adrianmatei@gmail.com");
-	             message.setBcc("adrian.matei@yahoo.com");			     
-			     message.setFrom("contact@podcastpedia.org");
+			     message.setTo("xxx@gmail.com");
+	             message.setBcc("xxx@gmail.com");
+			     message.setFrom("xxx@gmail.com");
 			     
 			     message.setSubject("Latest episodes from your podcast subscriptions");//or maybe name some + "and more", like you tube
 			     message.setSentDate(new Date());

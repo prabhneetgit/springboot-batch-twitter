@@ -63,8 +63,8 @@ public class NotifySubscribersJobConfiguration {
 	public ItemReader<User> notifySubscribersReader(){
 		
 		JdbcCursorItemReader<User> reader = new JdbcCursorItemReader<User>();
-		String sql = "select * from users where is_email_subscriber is not null";
-		
+//		String sql = "select * from users where is_email_subscriber is not null";
+		String sql = "select * from users where enabled is not null";
 		reader.setSql(sql);
 		reader.setDataSource(dataSource);
 		reader.setRowMapper(rowMapper());		

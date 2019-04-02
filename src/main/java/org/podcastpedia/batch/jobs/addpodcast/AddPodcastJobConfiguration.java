@@ -66,7 +66,7 @@ public class AddPodcastJobConfiguration {
 	@StepScope
 	public FlatFileItemReader<SuggestedPodcast> reader(@Value("#{jobParameters[directoryPath]}") String directoryPath){
 		FlatFileItemReader<SuggestedPodcast> reader = new FlatFileItemReader<SuggestedPodcast>();
-		reader.setLinesToSkip(1);//first line is title definition 
+		reader.setLinesToSkip(1);//first line is title definition
 		reader.setResource(getFileFromDirectory(directoryPath));
 		reader.setLineMapper(lineMapper());
 

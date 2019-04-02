@@ -34,7 +34,10 @@ public class MailConfiguration {
 		mailSender.setPassword(environment.getProperty("mail.password"));
 		
 		Properties properties = new Properties();
-		properties.put("mail.smtp.auth", environment.getProperty("mail.smtp.auth", Boolean.class, true));		
+		properties.put("mail.smtp.auth", environment.getProperty("mail.smtp.auth", Boolean.class, true));
+		properties.put("mail.smtp.socketFactory.port", "465");
+		properties.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
+		properties.put("mail.smtp.starttls.enable", "true");
 		mailSender.setJavaMailProperties(properties);
 		
 		return mailSender;
