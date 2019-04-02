@@ -9,3 +9,12 @@
 
 <b>Reference for twitter configs:<br></b>
 http://twitter4j.org/en/configuration.html
+
+<b>Run database using docker on change configuration in application.properties to point to localhost</b>
+<br>If using docker. Please follow the below steps:
+<br>
+1) docker run --name mysql -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql:5.7
+2) docker exec -it mysql bash
+3) mysql -u root -p <Enter the password on prompt>
+4) create database pcmDB;
+5) create database batchdb;
